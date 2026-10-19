@@ -1,525 +1,183 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#0b0b0e">
-  <meta name="description" content="ATLAS GYM ZUMBI. Supera tus límites. Descubre nuestros planes, horarios y ubicación.">
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0a0b0d" />
+  <meta name="description" content="ATLAS GYM ZUMBI. Supera tus límites hoy. Conoce nuestro video, imágenes, planes, horarios y ubicación en Zumbi, Zamora Chinchipe, Ecuador." />
+  <meta property="og:title" content="ATLAS GYM ZUMBI | Supera tus límites" />
+  <meta property="og:description" content="Tu próxima versión comienza aquí. Descubre planes, horarios y cómo llegar a ATLAS GYM ZUMBI." />
+  <meta property="og:type" content="website" />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
   <title>ATLAS GYM ZUMBI | Supera tus límites</title>
-
-  <link rel="icon" href="assets/favicon.svg">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-  <script src="script.js" defer></script>
 </head>
-
 <body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+  <div class="topbar"><span>📍 ZUMBI · ZAMORA CHINCHIPE</span><span class="topbar-center">NO ESPERES AL LUNES. EMPIEZA HOY.</span><a href="https://www.instagram.com/atlasgym.zumbi/" target="_blank" rel="noopener noreferrer">@ATLASGYM.ZUMBI ↗</a></div>
 
-  <!-- BARRA SUPERIOR -->
-  <div class="topbar">
-    <span>📍 ZUMBI · ZAMORA CHINCHIPE</span>
-    <span class="topbar-center">NO ESPERES AL LUNES. EMPIEZA HOY.</span>
-    <a href="https://www.instagram.com/atlasgym.zumbi/" target="_blank" rel="noopener noreferrer">
-      @ATLASGYM.ZUMBI ↗
-    </a>
-  </div>
-
-  <!-- MENÚ DE NAVEGACIÓN -->
-  <header class="header">
-    <nav class="nav container">
-
-      <a href="#inicio" class="brand">
-        <img src="assets/atlas-logo.jpg" alt="Logo Atlas Gym">
-        <div>
-          ATLAS<span>GYM</span>
-          <small>ZUMBI · ECUADOR</small>
-        </div>
+  <header class="site-header" id="top">
+    <nav class="nav container" aria-label="Navegación principal">
+      <a class="brand" href="#inicio" aria-label="ATLAS GYM, ir al inicio">
+        <img src="assets/atlas-logo.jpg" width="52" height="52" alt="Logo de ATLAS GYM" />
+        <span>ATLAS<span class="brand-highlight">GYM</span><small>ZUMBI · ECUADOR</small></span>
       </a>
-
-      <button class="menu-toggle" id="menuBtn" aria-label="Abrir menú" aria-expanded="false" aria-controls="navLinks">
-        ☰
-      </button>
-
-      <div class="nav-links" id="navLinks">
-        <a href="#inicio">INICIO</a>
-        <a href="#experiencia">EL GYM</a>
-        <a href="#planes">PLANES</a>
-        <a href="#horarios">HORARIOS</a>
-        <a href="#ubicacion">UBICACIÓN</a>
+      <button class="menu-toggle" type="button" aria-label="Abrir menú" aria-controls="nav-menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      <div class="nav-links" id="nav-menu">
+        <a href="#inicio">Inicio</a><a href="#video">Video</a><a href="#experiencia">El gym</a><a href="#planes">Planes</a><a href="#horarios">Horarios</a><a href="#ubicacion">Ubicación</a>
+        <a class="nav-mobile-cta" href="tel:+593992226966">Llámanos <span aria-hidden="true">↗</span></a>
       </div>
-
-      <a href="#planes" class="btn btn-red nav-cta">
-        EMPIEZA HOY ↗
-      </a>
-
+      <a class="btn btn-nav" href="#planes">EMPIEZA HOY <span aria-hidden="true">↗</span></a>
     </nav>
   </header>
 
-  <main>
-
-    <!-- PORTADA CON VIDEO -->
-    <section class="hero" id="inicio">
-
-      <div class="hero-inner container">
-
-        <div class="hero-content">
-          <p class="eyebrow">BIENVENIDO A ATLAS GYM ZUMBI</p>
-
-          <h1>
-            SUPERA
-            <span>TUS</span>
-            <em>LÍMITES.</em>
-          </h1>
-
-          <p class="hero-description">
-            Los resultados no llegan solos.
-            Cada repetición cuenta, cada día suma
-            y el siguiente nivel empieza contigo.
-          </p>
-
-          <div class="hero-buttons">
-            <a href="#planes" class="btn btn-red">
-              CONOCE LOS PLANES ↗
-            </a>
-            <a href="#ubicacion" class="btn btn-outline">
-              CÓMO LLEGAR ↗
-            </a>
+  <main id="contenido">
+    <section class="hero" id="inicio" aria-labelledby="hero-title">
+      <div class="hero-noise" aria-hidden="true"></div>
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow"><span class="eyebrow-line"></span> BIENVENIDO A ATLAS GYM ZUMBI</div>
+          <h1 id="hero-title">SUPERA<br /><span>TUS</span><br /><em>LÍMITES.</em></h1>
+          <p>Los resultados no llegan solos. Cada repetición cuenta, cada día suma y el siguiente nivel empieza contigo.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#planes">CONOCE LOS PLANES <span aria-hidden="true">↗</span></a>
+            <a class="btn btn-ghost" href="#ubicacion">CÓMO LLEGAR <span aria-hidden="true">↗</span></a>
           </div>
-
-          <div class="hero-stats">
-            <div>
-              <strong>$20<small>/MES</small></strong>
-              <span>PLAN INDIVIDUAL</span>
-            </div>
-
-            <div>
-              <strong>05:00<small> AM</small></strong>
-              <span>APERTURA LUN–VIE</span>
-            </div>
-          </div>
+          <div class="hero-info"><div><strong>$20<span>/MES</span></strong><small>PLAN INDIVIDUAL</small></div><div class="info-divider"></div><div><strong>05:00 <span>AM</span></strong><small>APERTURA LUN–VIE</small></div></div>
         </div>
-
-        <!-- VIDEO REAL DEL GIMNASIO -->
-        <div class="hero-visual" id="heroVisual">
-
-          <video
-            id="heroVideo"
-            class="hero-video"
-            autoplay
-            muted
-            loop
-            playsinline
-            preload="auto"
-          >
-            <source
-              src="assets/atlas-gym-video.mp4"
-              type="video/mp4"
-            >
-            Tu navegador no admite videos.
-          </video>
-
-          <div class="video-fallback">
-            <strong>ATLAS GYM ZUMBI</strong>
-            <p>Revisa el archivo atlas-gym-video.mp4 dentro de assets.</p>
-          </div>
-
-          <div class="video-overlay"></div>
-
-          <div class="video-badge">
-            <small>EST. EN</small>
-            <strong>ZUMBI</strong>
-            <small>ECUADOR</small>
-            <span>★</span>
-          </div>
-
-          <div class="video-side">
-            POWER · FOCUS · DISCIPLINE
-          </div>
-
-          <div class="video-caption">
-            WORK HARDER. GET STRONGER. //
-          </div>
-
-          <button id="pauseVideo" class="video-control" type="button">
-            Ⅱ PAUSAR VIDEO
-          </button>
-
+        <div class="hero-visual hero-real-photo">
+          <img class="hero-gym-photo" src="assets/atlas-entrenamiento.webp" alt="Persona entrenando en poleas dentro del gimnasio" fetchpriority="high" width="1300" height="1700" />
+          <span class="hero-outline" aria-hidden="true">A</span>
+          <div class="hero-vertical" aria-hidden="true">POWER · FOCUS · DISCIPLINE</div>
+          <div class="hero-sticker"><span>EST. EN</span><strong>ZUMBI</strong><span>ECUADOR</span><i aria-hidden="true">★</i></div>
+          <span class="hero-caption">ENTRENA FUERTE. SUPÉRATE. //</span>
+          <a class="hero-watch-link" href="#video">▶ VER NUESTRO VIDEO ↘</a>
         </div>
-
       </div>
-
+      <div class="hero-index" aria-hidden="true">01 / THE BEGINNING</div>
     </section>
 
-    <!-- TEXTO EN MOVIMIENTO -->
-    <div class="marquee">
-      <div class="marquee-content">
-        FUERZA ✦ DISCIPLINA ✦ CONSTANCIA ✦ RESULTADOS ✦ SIN EXCUSAS ✦
-        FUERZA ✦ DISCIPLINA ✦ CONSTANCIA ✦ RESULTADOS ✦ SIN EXCUSAS ✦
-      </div>
-    </div>
+    <div class="ticker" aria-label="Fuerza, disciplina, constancia y resultados"><div class="ticker-track" aria-hidden="true"><span>FUERZA <b>✦</b> DISCIPLINA <b>✦</b> CONSTANCIA <b>✦</b> RESULTADOS <b>✦</b> SIN EXCUSAS <b>✦</b> </span><span>FUERZA <b>✦</b> DISCIPLINA <b>✦</b> CONSTANCIA <b>✦</b> RESULTADOS <b>✦</b> SIN EXCUSAS <b>✦</b> </span></div></div>
 
-    <!-- SOBRE EL GIMNASIO -->
-    <section class="section about" id="experiencia">
+    <!-- VIDEO HORIZONTAL COMPLETO, SIN RECORTES -->
+    <section class="section section-cinema" id="video" aria-labelledby="video-title">
       <div class="container">
-
-        <p class="eyebrow">MÁS QUE UN ENTRENAMIENTO</p>
-
-        <div class="about-grid">
+        <div class="cinema-heading reveal">
           <div>
-            <h2>
-              NO HAY<br>
-              ATAJOS PARA<br>
-              <span>LO GRANDE.</span>
-            </h2>
-
-            <p class="section-description">
-              ATLAS GYM es un espacio donde la fuerza,
-              la disciplina y la constancia se convierten
-              en parte de tu estilo de vida.
-            </p>
-
-            <a class="text-link"
-               href="https://www.instagram.com/atlasgym.zumbi/"
-               target="_blank"
-               rel="noopener noreferrer">
-              CONOCE NUESTRA COMUNIDAD ↗
-            </a>
+            <div class="eyebrow"><span class="eyebrow-line"></span> TU MOTIVACIÓN EN MOVIMIENTO</div>
+            <h2 id="video-title">MIRA EL <span>MOVIMIENTO.</span></h2>
           </div>
-
-          <div class="about-visual">
-            <div class="about-label">
-              ATLAS<br>GYM<br>ZUMBI ★
-            </div>
-            <div class="about-big">STRONG</div>
-            <div class="about-bottom">NO PAIN. NO GAIN.</div>
-          </div>
+          <p>Video promocional animado con fotografías del gym. Reprodúcelo completo, sin recortes.</p>
         </div>
-
-        <div class="features">
-          <article>
-            <span class="feature-num">01 /</span>
-            <div class="feature-icon">↗</div>
-            <h3>CRECE EN FUERZA</h3>
-            <p>Construye hábitos y trabaja por tu mejor versión.</p>
-          </article>
-
-          <article>
-            <span class="feature-num">02 /</span>
-            <div class="feature-icon">◎</div>
-            <h3>SUPÉRATE CADA DÍA</h3>
-            <p>Una repetición más. Un objetivo más cerca.</p>
-          </article>
-
-          <article>
-            <span class="feature-num">03 /</span>
-            <div class="feature-icon">✳</div>
-            <h3>ENTRENA A TU RITMO</h3>
-            <p>Cada progreso cuenta. Lo importante es comenzar.</p>
-          </article>
+        <div class="cinema-frame reveal" id="video-container">
+          <video id="atlas-main-video" class="cinema-video" autoplay muted loop playsinline preload="metadata" poster="assets/atlas-gym-video-poster.jpg" controls aria-label="Video promocional de ATLAS GYM ZUMBI">
+            <source src="assets/atlas-gym-video.mp4" type="video/mp4" />
+            Tu navegador no admite la reproducción de este video.
+          </video>
+          <p class="cinema-error" role="status" hidden>El video no se pudo cargar. Comprueba que exista <strong>assets/atlas-gym-video.mp4</strong>.</p>
         </div>
-
+        <div class="cinema-footnote">
+          <span><span class="video-live-dot" aria-hidden="true"></span> ATLAS GYM ZUMBI · EN MOVIMIENTO</span>
+          <a href="assets/atlas-gym-video.mp4" target="_blank" rel="noopener">ABRIR VIDEO COMPLETO ↗</a>
+        </div>
       </div>
     </section>
 
-    <!-- PLANES MENSUALES -->
-    <section class="section plans" id="planes">
+    <section class="section section-experience" id="experiencia" aria-labelledby="experience-title">
       <div class="container">
-
-        <p class="eyebrow">INVIERTE EN TI</p>
-
-        <div class="section-heading">
-          <h2>
-            UN PLAN.<br>
-            <span>MUCHAS GANAS.</span>
-          </h2>
-          <p>
-            Ven solo o arma tu grupo.
-            Cuantas más personas entrenen juntas,
-            menor será el precio mensual por persona.
-          </p>
-        </div>
-
-        <div class="plans-grid">
-
-          <div class="plan-options">
-
-            <button class="plan-item selected" data-people="1">
-              <div>
-                <small>01</small>
-                <strong>PLAN INDIVIDUAL</strong>
-                <span>1 persona</span>
-              </div>
-              <b>$20 <small>/persona</small></b>
-              <span class="plan-arrow">↗</span>
-            </button>
-
-            <button class="plan-item" data-people="2">
-              <div>
-                <small>02</small>
-                <strong>PLAN DÚO</strong>
-                <span>2 personas</span>
-              </div>
-              <b>$19 <small>/persona</small></b>
-              <span class="plan-arrow">↗</span>
-            </button>
-
-            <button class="plan-item" data-people="3">
-              <div>
-                <small>03</small>
-                <strong>PLAN TRÍO</strong>
-                <span>3 personas</span>
-              </div>
-              <b>$18 <small>/persona</small></b>
-              <span class="plan-arrow">↗</span>
-            </button>
-
-            <button class="plan-item" data-people="4">
-              <div>
-                <small>04</small>
-                <strong>PLAN CREW</strong>
-                <span>4 personas</span>
-              </div>
-              <b>$17 <small>/persona</small></b>
-              <span class="plan-arrow">↗</span>
-            </button>
-
+        <div class="section-top reveal"><div class="eyebrow"><span class="eyebrow-line"></span> MÁS QUE UN ENTRENAMIENTO</div><span class="section-number">01 / EL MOVIMIENTO</span></div>
+        <div class="experience-grid">
+          <div class="experience-intro reveal">
+            <h2 id="experience-title">NO HAY<br />ATAJOS PARA<br /><span>LO GRANDE.</span></h2>
+            <p>ATLAS GYM es un espacio para concentrarte en lo que importa: entrenar con intención, mejorar a tu ritmo y no rendirte.</p>
+            <a class="text-link" href="https://www.instagram.com/atlasgym.zumbi/" target="_blank" rel="noopener noreferrer">MIRA NUESTRA COMUNIDAD EN INSTAGRAM <span>↗</span></a>
           </div>
-
-          <div class="plan-summary">
-            <div class="summary-top">
-              <span>EL PLAN QUE ELEGISTE</span>
-              <span>ATLAS ★</span>
-            </div>
-
-            <h3 id="selectedName">PLAN INDIVIDUAL</h3>
-
-            <div class="summary-price">
-              $<strong id="selectedPrice">20</strong>
-              <small>/ PERSONA AL MES</small>
-            </div>
-
-            <div class="summary-row">
-              <span>Personas</span>
-              <strong id="selectedPeople">1 persona</strong>
-            </div>
-
-            <div class="summary-row">
-              <span>Total mensual</span>
-              <strong id="selectedTotal">$20</strong>
-            </div>
-
-            <p class="summary-note">
-              Consulta las condiciones actuales directamente con el gimnasio.
-            </p>
-
-            <a class="btn btn-white"
-               href="https://www.instagram.com/atlasgym.zumbi/"
-               target="_blank"
-               rel="noopener noreferrer">
-              CONSULTAR ESTE PLAN ↗
-            </a>
-
+          <div class="experience-art experience-photo experience-campaign reveal">
+            <img src="assets/atlas-campana-entrenamiento.webp" alt="Imagen promocional ilustrativa de un joven entrenando brazos con máquina de poleas" loading="lazy" width="1536" height="1024" />
+            <span class="campaign-disclaimer">IMAGEN PROMOCIONAL ILUSTRATIVA</span>
           </div>
-
         </div>
-
+        <div class="feature-row">
+          <article class="feature reveal"><span class="feature-number">01</span><div class="feature-icon" aria-hidden="true">↗</div><h3>CRECE EN FUERZA</h3><p>Construye hábitos que te lleven más lejos.</p></article>
+          <article class="feature reveal"><span class="feature-number">02</span><div class="feature-icon" aria-hidden="true">◎</div><h3>SUPÉRATE CADA DÍA</h3><p>Tu único rival es quien eras ayer.</p></article>
+          <article class="feature reveal"><span class="feature-number">03</span><div class="feature-icon" aria-hidden="true">✳</div><h3>ENTRENA A TU RITMO</h3><p>Lo importante no es empezar perfecto, sino empezar.</p></article>
+        </div>
       </div>
     </section>
 
-    <!-- HORARIOS -->
-    <section class="section hours" id="horarios">
+    <!-- GALERÍA CON FOTOGRAFÍAS REALES APORTADAS POR EL USUARIO -->
+    <section class="section section-gallery" id="galeria" aria-labelledby="gallery-title">
+      <div class="container">
+        <div class="section-top reveal"><div class="eyebrow"><span class="eyebrow-line"></span> CONOCE NUESTRO ESPACIO</div><span class="section-number">02 / ASÍ ENTRENAMOS</span></div>
+        <div class="gallery-title-row reveal">
+          <h2 id="gallery-title">DENTRO DEL <span>GYM.</span></h2>
+          <p>Conoce parte del ambiente y el equipamiento de ATLAS GYM ZUMBI.</p>
+        </div>
+        <div class="gym-gallery">
+          <a class="gallery-card gallery-athlete reveal" href="assets/atlas-entrenamiento.webp" target="_blank" rel="noopener" aria-label="Ver fotografía de entrenamiento en tamaño completo">
+            <img src="assets/atlas-entrenamiento.webp" alt="Ejercicio en máquina de poleas" loading="lazy" width="1300" height="1700" />
+            <div class="gallery-caption"><span>01 / ENTRENAMIENTO</span><strong>ENFOQUE Y DISCIPLINA</strong><small>VER FOTO ↗</small></div>
+          </a>
+          <a class="gallery-card gallery-equipment reveal" href="assets/atlas-mancuernas.webp" target="_blank" rel="noopener" aria-label="Ver fotografía de mancuernas en tamaño completo">
+            <img src="assets/atlas-mancuernas.webp" alt="Mancuernas disponibles para entrenar" loading="lazy" width="1300" height="1700" />
+            <div class="gallery-caption"><span>02 / EQUIPAMIENTO</span><strong>CADA REPETICIÓN CUENTA</strong><small>VER FOTO ↗</small></div>
+          </a>
+        </div>
+        <p class="gallery-more">¿Quieres ver más entrenamientos? <a href="https://www.instagram.com/atlasgym.zumbi/" target="_blank" rel="noopener noreferrer">Síguenos en Instagram ↗</a></p>
+      </div>
+    </section>
+
+    <section class="section section-plans" id="planes" aria-labelledby="plans-title">
+      <div class="container">
+        <div class="section-top reveal"><div class="eyebrow"><span class="eyebrow-line"></span> INVIERTE EN TI</div><span class="section-number">02 / MEMBRESÍAS</span></div>
+        <div class="plan-header reveal"><h2 id="plans-title">UN PLAN.<br /><span>MUCHAS GANAS.</span></h2><p>Ven solo o arma tu grupo. Entre más personas entrenan juntas, menor es el precio mensual por persona.</p></div>
+        <div class="pricing-layout">
+          <div class="pricing-options reveal" role="group" aria-label="Selecciona la cantidad de personas">
+            <button class="price-option is-selected" type="button" data-people="1" aria-pressed="true"><span class="option-left"><span class="option-number">01</span><span><strong>PLAN INDIVIDUAL</strong><small>1 persona</small></span></span><span class="option-price">$20 <small>/ persona</small></span><span class="option-arrow">↗</span></button>
+            <button class="price-option" type="button" data-people="2" aria-pressed="false"><span class="option-left"><span class="option-number">02</span><span><strong>PLAN DÚO</strong><small>2 personas</small></span></span><span class="option-price">$19 <small>/ persona</small></span><span class="option-arrow">↗</span></button>
+            <button class="price-option" type="button" data-people="3" aria-pressed="false"><span class="option-left"><span class="option-number">03</span><span><strong>PLAN TRÍO</strong><small>3 personas</small></span></span><span class="option-price">$18 <small>/ persona</small></span><span class="option-arrow">↗</span></button>
+            <button class="price-option" type="button" data-people="4" aria-pressed="false"><span class="option-left"><span class="option-number">04</span><span><strong>PLAN CREW</strong><small>4 personas</small></span></span><span class="option-price">$17 <small>/ persona</small></span><span class="option-arrow">↗</span></button>
+          </div>
+          <aside class="pricing-summary reveal" aria-label="Resumen de la mensualidad">
+            <div class="summary-top"><span>EL PLAN QUE ELEGISTE</span><span class="summary-mark">A<span>★</span></span></div>
+            <h3 id="selected-name">PLAN INDIVIDUAL</h3><div class="big-price"><span>$</span><strong id="selected-price">20</strong><small>/ PERSONA AL MES</small></div>
+            <div class="summary-rule"></div>
+            <div class="summary-row"><span>Personas</span><strong id="selected-people">1 persona</strong></div>
+            <div class="summary-row"><span>Total mensual del grupo</span><strong id="selected-total">$20</strong></div>
+            <p>Precios publicados por ATLAS GYM. Confirma las condiciones y la disponibilidad directamente con el gimnasio.</p>
+            <a class="btn btn-white" id="selected-contact" href="https://www.instagram.com/atlasgym.zumbi/" target="_blank" rel="noopener noreferrer">CONSULTAR EL PLAN <span aria-hidden="true">↗</span></a>
+            <span class="summary-bottom">EL CAMBIO COMIENZA CONTIGO ✦</span>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-hours" id="horarios" aria-labelledby="hours-title">
       <div class="container hours-grid">
-
-        <div>
-          <p class="eyebrow">HAZLE ESPACIO A TUS METAS</p>
-          <h2>
-            TU<br>
-            MOMENTO<br>
-            <span>ES AHORA.</span>
-          </h2>
-          <p class="section-description">
-            Entrena antes de empezar tu día
-            o después del trabajo.
-            Encuentra el horario que mejor se adapte a ti.
-          </p>
-        </div>
-
-        <div class="hours-card">
-          <div class="hours-card-title">
-            HORARIOS DE ATENCIÓN
-            <span>●</span>
-          </div>
-
-          <div class="hour-item">
-            <h3>LUNES A VIERNES</h3>
-            <strong>5:00 AM – 11:00 AM</strong>
-            <strong>2:00 PM – 10:00 PM</strong>
-          </div>
-
-          <div class="hour-item">
-            <h3>SÁBADOS</h3>
-            <strong>8:00 AM – 2:00 PM</strong>
-          </div>
-
-          <div class="hour-item">
-            <h3>DOMINGOS</h3>
-            <p>Consultar disponibilidad</p>
-          </div>
-
-          <div class="hours-footer">
-            ES TU HORA. ES TU MOMENTO. ↗
-          </div>
-        </div>
-
+        <div class="hours-heading reveal"><div class="eyebrow"><span class="eyebrow-line"></span> HAZLE ESPACIO A TUS METAS</div><h2 id="hours-title">TU<br />MOMENTO<br /><span>ES AHORA.</span></h2><p>¿Tempranito o después del trabajo? Revisa los horarios de atención y encuentra tu momento para entrenar.</p><div class="hours-decor" aria-hidden="true">05:00<span>AM</span></div></div>
+        <div class="hours-card reveal"><div class="hours-card-head"><span>HORARIO DE ATENCIÓN</span><span class="hours-dot" aria-hidden="true"></span></div><div class="hours-item"><span class="hours-day">LUNES A VIERNES</span><div class="hours-time">5:00 AM – 11:00 AM<br /><span>2:00 PM – 10:00 PM</span></div></div><div class="hours-item"><span class="hours-day">SÁBADOS</span><div class="hours-time">8:00 AM – 2:00 PM</div></div><div class="hours-item hours-last"><span class="hours-day">DOMINGOS</span><div class="hours-time hours-subtle">Consultar disponibilidad</div></div><div class="hours-footer">ES TU HORA. ES TU MOMENTO. <span>↗</span></div></div>
       </div>
     </section>
 
-    <!-- UBICACIÓN -->
-    <section class="section location" id="ubicacion">
+    <section class="section section-location" id="ubicacion" aria-labelledby="location-title">
       <div class="container">
-
-        <p class="eyebrow">ESTAMOS CERCA DE TI</p>
-
-        <div class="location-box">
-
-          <div class="location-content">
-            <span class="location-tag">📍 ZUMBI, ECUADOR</span>
-
-            <h2>
-              NOS VEMOS<br>
-              <span>EN EL GYM.</span>
-            </h2>
-
-            <p>
-              8 de Septiembre y Paquisha<br>
-              Zumbi, Centinela del Cóndor<br>
-              Zamora Chinchipe, Ecuador
-            </p>
-
-            <a class="btn btn-red"
-               href="https://www.google.com/maps/search/?api=1&amp;query=8+de+Septiembre+y+Paquisha%2C+Zumbi%2C+Ecuador"
-               target="_blank"
-               rel="noopener noreferrer">
-              ABRIR GOOGLE MAPS ↗
-            </a>
-
-            <a class="phone-link" href="tel:+593992226966">
-              ☎ 099 222 6966
-            </a>
-          </div>
-
-          <div class="location-decoration">
-            <div class="location-circle">
-              <strong>ATLAS</strong>
-              <span>GYM ZUMBI</span>
-              <b>★</b>
-            </div>
-            <p>YOUR JOURNEY STARTS HERE.</p>
-          </div>
-
+        <div class="section-top reveal"><div class="eyebrow"><span class="eyebrow-line"></span> ESTAMOS CERCA DE TI</div><span class="section-number">03 / ENCUÉNTRANOS</span></div>
+        <div class="location-panel reveal">
+          <div class="location-copy"><span class="location-tag">📍 ZUMBI, ECUADOR</span><h2 id="location-title">NOS VEMOS<br /><span>EN EL GYM.</span></h2><p>8 de Septiembre y Paquisha<br />Zumbi, cantón Centinela del Cóndor<br />Zamora Chinchipe, Ecuador</p><div class="location-ctas"><a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&amp;query=8+de+Septiembre+y+Paquisha%2C+Zumbi%2C+Zamora+Chinchipe%2C+Ecuador" target="_blank" rel="noopener noreferrer">ABRIR EN GOOGLE MAPS <span aria-hidden="true">↗</span></a><a class="location-phone" href="tel:+593992226966">📞 099 222 6966</a></div></div>
+          <div class="map-graphic" aria-hidden="true"><div class="map-road road-one"></div><div class="map-road road-two"></div><div class="map-road road-three"></div><div class="map-road road-four"></div><div class="map-ring ring-one"></div><div class="map-ring ring-two"></div><div class="map-pin">A</div><div class="map-coordinate">ZUMBI / ZAMORA CHINCHIPE</div></div>
         </div>
-
       </div>
     </section>
 
-    <!-- PREGUNTAS -->
-    <section class="section faq">
-      <div class="container faq-grid">
+    <section class="section section-faq" aria-labelledby="faq-title"><div class="container faq-grid"><div class="reveal"><div class="eyebrow"><span class="eyebrow-line"></span> RESOLVEMOS TUS DUDAS</div><h2 id="faq-title">SIN DUDAS.<br /><span>SIN EXCUSAS.</span></h2></div><div class="faq-list reveal"><details><summary>¿Cuánto cuesta la mensualidad? <span>+</span></summary><p>El plan individual cuesta $20 al mes. Si se inscriben 2 personas, pagan $19 cada una; 3 personas, $18 cada una; y 4 personas, $17 cada una.</p></details><details><summary>¿Cuál es el horario de atención? <span>+</span></summary><p>De lunes a viernes: de 5:00 a 11:00 AM y de 2:00 a 10:00 PM. Los sábados: de 8:00 AM a 2:00 PM. Para domingos, consulta directamente al gimnasio.</p></details><details><summary>¿Dónde queda ATLAS GYM? <span>+</span></summary><p>Estamos en la calle 8 de Septiembre y Paquisha, Zumbi, Zamora Chinchipe, Ecuador. Puedes usar el botón de Google Maps para buscar la dirección.</p></details><details><summary>¿Cómo puedo pedir más información? <span>+</span></summary><p>Llama al 099 222 6966 o visita el Instagram oficial @atlasgym.zumbi para consultar cualquier detalle.</p></details></div></div></section>
 
-        <div>
-          <p class="eyebrow">RESOLVEMOS TUS DUDAS</p>
-          <h2>
-            SIN DUDAS.<br>
-            <span>SIN EXCUSAS.</span>
-          </h2>
-        </div>
-
-        <div>
-          <details>
-            <summary>¿Cuánto cuesta la mensualidad?</summary>
-            <p>Desde $17 hasta $20 por persona, según el número de integrantes del plan.</p>
-          </details>
-
-          <details>
-            <summary>¿Cuál es el horario de atención?</summary>
-            <p>Lunes a viernes de 5 AM a 11 AM y de 2 PM a 10 PM. Sábados de 8 AM a 2 PM.</p>
-          </details>
-
-          <details>
-            <summary>¿Dónde está ubicado el gimnasio?</summary>
-            <p>En 8 de Septiembre y Paquisha, Zumbi, Zamora Chinchipe.</p>
-          </details>
-
-          <details>
-            <summary>¿Cómo puedo comunicarme?</summary>
-            <p>Puedes llamar al 099 222 6966 o escribir a @atlasgym.zumbi en Instagram.</p>
-          </details>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- MENSAJE FINAL -->
-    <section class="final-cta">
-      <div class="container">
-        <span>NO DEJES TUS OBJETIVOS PARA DESPUÉS</span>
-        <h2>
-          ESTE ES<br>
-          <em>TU MOMENTO.</em>
-        </h2>
-        <a class="btn btn-white"
-           href="https://www.instagram.com/atlasgym.zumbi/"
-           target="_blank"
-           rel="noopener noreferrer">
-          HABLEMOS POR INSTAGRAM ↗
-        </a>
-      </div>
-    </section>
-
+    <section class="last-cta" aria-labelledby="cta-title"><div class="container last-cta-inner reveal"><div class="cta-star" aria-hidden="true">✳</div><span>NO DEJES TUS OBJETIVOS PARA DESPUÉS</span><h2 id="cta-title">ESTE ES<br /><em>TU MOMENTO.</em></h2><a class="btn btn-white" href="https://www.instagram.com/atlasgym.zumbi/" target="_blank" rel="noopener noreferrer">HABLEMOS POR INSTAGRAM <span aria-hidden="true">↗</span></a><span class="last-cta-decoration" aria-hidden="true">ATLAS</span></div></section>
   </main>
 
-  <!-- PIE DE PÁGINA -->
-  <footer>
-    <div class="container footer-grid">
-
-      <div>
-        <a href="#inicio" class="brand">
-          <img src="assets/atlas-logo.jpg" alt="Atlas Gym">
-          <div>
-            ATLAS<span>GYM</span>
-            <small>ZUMBI · ECUADOR</small>
-          </div>
-        </a>
-        <p>SUPERA TUS LÍMITES HOY.</p>
-      </div>
-
-      <div class="footer-links">
-        <strong>EXPLORA</strong>
-        <a href="#experiencia">El gym</a>
-        <a href="#planes">Planes</a>
-        <a href="#horarios">Horarios</a>
-        <a href="#ubicacion">Ubicación</a>
-      </div>
-
-      <div class="footer-links">
-        <strong>CONTACTO</strong>
-        <a href="tel:+593992226966">099 222 6966</a>
-        <a href="https://www.instagram.com/atlasgym.zumbi/" target="_blank" rel="noopener noreferrer">Instagram ↗</a>
-        <span>Zumbi, Ecuador</span>
-      </div>
-
-    </div>
-
-    <div class="container footer-bottom">
-      <span>© <span id="year">2026</span> ATLAS GYM ZUMBI.</span>
-      <a href="#inicio">VOLVER ARRIBA ↑</a>
-    </div>
-
-  </footer>
-
+  <footer class="site-footer"><div class="container footer-grid"><div><a href="#inicio" class="brand brand-footer"><img src="assets/atlas-logo.jpg" width="55" height="55" alt="Logo de ATLAS GYM"/><span>ATLAS<span class="brand-highlight">GYM</span><small>ZUMBI · ECUADOR</small></span></a><p>SUPERA TUS LÍMITES HOY.</p></div><div class="footer-links"><strong>EXPLORA</strong><a href="#experiencia">El gym</a><a href="#planes">Planes</a><a href="#horarios">Horarios</a><a href="#ubicacion">Ubicación</a></div><div class="footer-links"><strong>CONTACTO</strong><a href="tel:+593992226966">099 222 6966</a><a href="https://www.instagram.com/atlasgym.zumbi/" target="_blank" rel="noopener noreferrer">Instagram ↗</a><span>Zumbi, Zamora Chinchipe</span></div></div><div class="container footer-bottom"><span>© <span id="year">2026</span> ATLAS GYM ZUMBI. TODOS LOS DERECHOS RESERVADOS.</span><a href="#inicio">VOLVER ARRIBA ↑</a></div></footer>
+  <script src="script.js" defer></script>
 </body>
 </html>

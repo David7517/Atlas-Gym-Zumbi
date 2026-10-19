@@ -1,136 +1,95 @@
+// ATLAS GYM ZUMBI — Interacciones sin librerías externas.
 
-// ATLAS GYM ZUMBI
-// FUNCIONALIDADES DE LA PÁGINA
+const menuButton = document.querySelector('.menu-toggle');
+const navMenu = document.querySelector('.nav-links');
 
-// 1. MENÚ PARA CELULARES
-
-const menuBtn = document.getElementById("menuBtn");
-const navLinks = document.getElementById("navLinks");
-
-menuBtn.addEventListener("click", () => {
-  const abierto = navLinks.classList.toggle("open");
-
-  menuBtn.textContent = abierto ? "✕" : "☰";
-  menuBtn.setAttribute("aria-expanded", String(abierto));
-});
-
-document.querySelectorAll(".nav-links a").forEach((enlace) => {
-  enlace.addEventListener("click", () => {
-    navLinks.classList.remove("open");
-    menuBtn.textContent = "☰";
-    menuBtn.setAttribute("aria-expanded", "false");
-  });
-});
-
-// 2. VIDEO DE LA PORTADA
-
-const video = document.getElementById("heroVideo");
-const videoVisual = document.getElementById("heroVisual");
-const pauseBtn = document.getElementById("pauseVideo");
-
-function actualizarBotonVideo() {
-  if (video.paused) {
-    pauseBtn.textContent = "▶ REPRODUCIR VIDEO";
-  } else {
-    pauseBtn.textContent = "Ⅱ PAUSAR VIDEO";
-  }
+function closeMenu() {
+  if (!menuButton || !navMenu) return;
+  menuButton.setAttribute('aria-expanded', 'false');
+  menuButton.setAttribute('aria-label', 'Abrir menú');
+  navMenu.classList.remove('is-open');
+  document.body.classList.remove('menu-open');
 }
 
-video.muted = true;
-video.loop = true;
-
-video.addEventListener("playing", actualizarBotonVideo);
-video.addEventListener("pause", actualizarBotonVideo);
-
-video.addEventListener("error", () => {
-  videoVisual.classList.add("video-error");
-  pauseBtn.style.display = "none";
-  console.error("No se pudo cargar el video:", video.currentSrc);
+menuButton?.addEventListener('click', () => {
+  const isOpen = menuButton.getAttribute('aria-expanded') === 'true';
+  menuButton.setAttribute('aria-expanded', String(!isOpen));
+  menuButton.setAttribute('aria-label', isOpen ? 'Abrir menú' : 'Cerrar menú');
+  navMenu.classList.toggle('is-open', !isOpen);
+  document.body.classList.toggle('menu-open', !isOpen);
 });
 
-const fuente = video.querySelector("source");
+navMenu?.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeMenu));
+document.addEventListener('keydown', (event) => { if (event.key === 'Escape') closeMenu(); });
+window.addEventListener('resize', () => { if (window.innerWidth > 900) closeMenu(); });
 
-if (fuente) {
-  fuente.addEventListener("error", () => {
-    videoVisual.classList.add("video-error");
-    pauseBtn.style.display = "none";
-    console.error("Revisa la ruta del archivo:", fuente.src);
-  });
-}
-
-pauseBtn.addEventListener("click", () => {
-  if (video.paused) {
-    video.play().catch((error) => {
-      console.error("Error reproduciendo video:", error);
-    });
-  } else {
-    video.pause();
-  }
-});
-
-// Respetar preferencias de movimiento reducido
-if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-  video.pause();
-} else {
-  video.play().catch(() => {
-    actualizarBotonVideo();
-  });
-}
-
-actualizarBotonVideo();
-
-// 3. CALCULADORA DE PLANES
-
-const planes = {
-  1: { nombre: "PLAN INDIVIDUAL", precio: 20 },
-  2: { nombre: "PLAN DÚO", precio: 19 },
-  3: { nombre: "PLAN TRÍO", precio: 18 },
-  4: { nombre: "PLAN CREW", precio: 17 }
+// Precios observados en las promociones del gimnasio (USD por persona/mes).
+const plans = {
+  1: { name: 'PLAN INDIVIDUAL', price: 20 },
+  2: { name: 'PLAN DÚO', price: 19 },
+  3: { name: 'PLAN TRÍO', price: 18 },
+  4: { name: 'PLAN CREW', price: 17 },
 };
+const options = document.querySelectorAll('.price-option');
+const selectedName = document.getElementById('selected-name');
+const selectedPrice = document.getElementById('selected-price');
+const selectedPeople = document.getElementById('selected-people');
+const selectedTotal = document.getElementById('selected-total');
+const selectedContact = document.getElementById('selected-contact');
 
-const botonesPlanes = document.querySelectorAll(".plan-item");
-
-const selectedName = document.getElementById("selectedName");
-const selectedPrice = document.getElementById("selectedPrice");
-const selectedPeople = document.getElementById("selectedPeople");
-const selectedTotal = document.getElementById("selectedTotal");
-
-function seleccionarPlan(personas) {
-  const plan = planes[personas];
-
+function selectPlan(people) {
+  const plan = plans[people];
   if (!plan) return;
-
-  botonesPlanes.forEach((boton) => {
-    const activo = Number(boton.dataset.people) === personas;
-
-    boton.classList.toggle("selected", activo);
-    boton.setAttribute("aria-pressed", String(activo));
+  options.forEach((option) => {
+    const active = Number(option.dataset.people) === people;
+    option.classList.toggle('is-selected', active);
+    option.setAttribute('aria-pressed', String(active));
   });
+  selectedName.textContent = plan.name;
+  selectedPrice.textContent = String(plan.price);
+  selectedPeople.textContent = `${people} ${people === 1 ? 'persona' : 'personas'}`;
+  selectedTotal.textContent = `$${people * plan.price}`;
+  selectedContact.setAttribute('aria-label', `Consultar ${plan.name} para ${people} personas en Instagram`);
+}
+options.forEach((option) => option.addEventListener('click', () => selectPlan(Number(option.dataset.people))));
+selectPlan(1);
 
-  selectedName.textContent = plan.nombre;
-  selectedPrice.textContent = plan.precio;
-
-  selectedPeople.textContent =
-    personas === 1 ? "1 persona" : `${personas} personas`;
-
-  const total = plan.precio * personas;
-
-  selectedTotal.textContent = `$${total}`;
+// Aparición sutil al hacer scroll; compatible con preferencias de movimiento reducido.
+const revealItems = document.querySelectorAll('.reveal');
+if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+  revealItems.forEach((item) => observer.observe(item));
+} else {
+  revealItems.forEach((item) => item.classList.add('is-visible'));
 }
 
-botonesPlanes.forEach((boton) => {
-  boton.addEventListener("click", () => {
-    const personas = Number(boton.dataset.people);
-    seleccionarPlan(personas);
+document.getElementById('year').textContent = String(new Date().getFullYear());
+
+// Video horizontal completo; en celular los controles permiten reproducirlo manualmente.
+const atlasVideo = document.getElementById('atlas-main-video');
+const videoContainer = document.getElementById('video-container');
+if (atlasVideo) {
+  atlasVideo.muted = true;
+  atlasVideo.loop = true;
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduceMotion) atlasVideo.pause();
+  else atlasVideo.play().catch(() => {
+    // Algunos navegadores bloquean reproducción automática; los controles permanecen visibles.
   });
-});
-
-seleccionarPlan(1);
-
-// 4. AÑO AUTOMÁTICO
-
-const year = document.getElementById("year");
-
-if (year) {
-  year.textContent = new Date().getFullYear();
+  atlasVideo.addEventListener('error', () => {
+    const error = videoContainer.querySelector('.cinema-error');
+    if (error) error.hidden = false;
+  });
+  const source = atlasVideo.querySelector('source');
+  source?.addEventListener('error', () => {
+    const error = videoContainer.querySelector('.cinema-error');
+    if (error) error.hidden = false;
+  });
 }
